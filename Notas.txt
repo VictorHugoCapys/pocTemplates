@@ -1,0 +1,20 @@
+﻿A intenção é tornar a criação de variáveis algo mais dinâmico e de fácil manutenção.
+
+Pontos positivos:
+	- Código menos extenso e de fácil manutenção.
+	- Maior facilidade na realização de testes.
+	- Maior consistência nos dados exibidos pelo front (Atualmente o front precisa escrever variável a variável para a exibição, onde qualquer erro de sintaxe pode gerar um bug).
+	- Criação de variáveis se torna um procedimento de banco, ou seja, geralmente não seria necessária uma publicação.
+	- Menor gasto de processamento (No código, é verificado todas as variáveis existentes no template, assim, apenas é executado os selects que de fato serão usados).
+	- Retrocompatibilidade (As variáveis dos outros produtos funcionam caso tenham o mesmo identificador, além disso, é possivel utilizar a forma antiga em conjunto com a implementada aqui).
+
+Pontos Negativos:
+	- Maior quantidade de consultas executadas.
+	- Maior investimento de tempo inicial, pois as variáveis precisariam ser inseridas no banco uma a uma.
+	- Nem todas as variáveis são viáveis de fazer dessa forma, pois algumas incluem informações que não vem do banco como, por exemplo, a data de hoje, o usuário logado etc.
+
+Pontos a serem discutidos:
+	- Em questão de segurança e até mesmo boas práticas, é mesmo o ideal usar como identificador o nome das tabelas? 
+	  da forma que é feito atualmente, até mesmo o cliente pode visualizar o nome das tabelas com um pouco de esforço, 
+	  porém, da forma que está sendo proposto, esse identificador poderia ser até mesmo numérico, porém isso iria retirar a
+	  retrocompatibilidade.
