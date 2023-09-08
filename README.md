@@ -1,1 +1,1 @@
-# é preciso rodar o comando Update-Database no terminal antes de executar pela primeira vez
+#### é preciso rodar o comando `cd pocTemplates && dotnet ef database update` no terminal antes de executar pela primeira vez
