@@ -29,7 +29,6 @@ namespace pocTemplates.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
@@ -43,55 +42,47 @@ namespace pocTemplates.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TabelaDeDadoID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("idDados")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("telefone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("TabelaDeDadoID");
+                    b.HasIndex("idDados");
 
                     b.ToTable("TabelaDeDados2");
                 });
 
-            modelBuilder.Entity("pocTemplates.LocalBDContext+VariaveisTemplate", b =>
+            modelBuilder.Entity("pocTemplates.LocalBDContext+VariaveisTemplates", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("identificador")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("modulo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("operacao")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
 
-                    b.ToTable("VariaveisTemplates");
+                    b.ToTable("VariaveisTemplate");
                 });
 
             modelBuilder.Entity("pocTemplates.LocalBDContext+TabelaDeDado2", b =>
                 {
                     b.HasOne("pocTemplates.LocalBDContext+TabelaDeDado", "TabelaDeDado")
                         .WithMany()
-                        .HasForeignKey("TabelaDeDadoID")
+                        .HasForeignKey("idDados")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -15,7 +15,7 @@ namespace pocTemplates
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=BancoLocal.db");
+            optionsBuilder.UseSqlite($"Data Source={AppDomain.CurrentDomain.BaseDirectory}/BancoLocal.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

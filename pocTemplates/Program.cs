@@ -24,7 +24,7 @@ public class HelloWorld
 
     public static void Main(string[] args)
     {
-        //LocalBD.ReiniciarBanco();
+        LocalBD.ReiniciarBanco();
         Request request = new Request
         {
             IdTabelaDeDados = 1
